@@ -53,7 +53,7 @@ The application should composed by:
 
 The following requirements need to be met:
 
-The search must be able to list items from a certain actor or director.
+The search must be able to list items from a query.
 
 1. The splash screen:
     - It's a loading page to request and save some configurations to be used. 
