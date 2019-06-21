@@ -34,7 +34,7 @@ This repo represents the current admission test that is needed to apply for an A
 Android Challenge:
 -
 
-The idea is create an app that is able to list products requested by a query.
+The idea is to create an app that is able to list products requested by a query.
 
 The challenge Submission:
 - Create a pull request using the base "development_mocklab" 
@@ -44,7 +44,7 @@ The challenge Submission:
 Description:
 -
 
-The application should composed by:
+The application should be composed by:
 
     - Splash screen 
     - Search page 
@@ -59,11 +59,11 @@ The search must be able to list items from a query.
     - It's a loading page to request and save some configurations to be used. 
 
 2. The search page:
-    - It's a page that allow submit a query to get a result, like Google Search.
+    - It's a page that allow the submission of a query to get a result, like Google Search.
 
 3. The result list page:
     - It's a page that shows the query and respective result, like Google Search.
-    - For each result item should be displayed this information:
+    - For each result item, the following should be displayed:
         - Image;
         - Name and brand;
         - Price, old price and discount;
@@ -71,7 +71,7 @@ The search must be able to list items from a query.
 
 4. The item detail page:
     - It's a page that shows the information about the selected item
-    - Should be displayed this information:
+    - The following should be displayed:
         - Image or image gallery;
         - Name and brand;
         - Price, old price and discount;
@@ -81,7 +81,7 @@ The search must be able to list items from a query.
 Mock API: 
 -
 
-NOTE: The mocklab API is based in JSON mocks, only supports the following requests.
+NOTE: The mocklab API is based in JSON mocks and only supports the following requests.
 
 - Get configurations
 
@@ -95,7 +95,7 @@ NOTE: The mocklab API is based in JSON mocks, only supports the following reques
     
     > http://nd7d1.mocklab.io/search/phone/page/2/
 
-    Paremeters:
+    Parameters:
     - *"phone"* - the query
     - *"1"* - the page number (pagination)
 
@@ -105,7 +105,7 @@ NOTE: The mocklab API is based in JSON mocks, only supports the following reques
 
     > http://nd7d1.mocklab.io/product/2/
 
-    Paremeters:
+    Parameters:
     - *"1"* - the product identifier "sku"
     
     
@@ -131,7 +131,8 @@ Required tech implementations:
 
 We value the following implementations:
 -
-- Courotines or RxAndroid;
+- Coroutines or RxAndroid;
+- Unit tests;
 - Animations;
 - Image Loader (Volley/Picasso/Glide);
 - Retrofit/OKHttp client for API communication;
