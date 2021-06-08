@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="mainViewModel"
+            type="android.ptc.com.ptcflixing.viewmodels.MainViewModel" />
+    </data>
+
+    <merge >
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/AppBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_itself"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                android:theme="@style/Theme.AppCompat"
+                android:background="@color/black"
+                app:popupTheme="@style/ThemeOverlay.AppCompat">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp">
+
+                    <RelativeLayout
+                        android:id="@+id/back"
+                        visibleGone="@{mainViewModel.toolbarData.showBack}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:onClick="@{() -> mainViewModel.backClick()}"
+                        android:layout_alignParentLeft="true">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_back_arrow"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/toolbar_title"
+                        visibleGone="@{mainViewModel.toolbarData.showTitle}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@{mainViewModel.toolbarData.title}"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"/>
+
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </merge>
+</layout>

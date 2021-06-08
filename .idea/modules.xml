@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ptc_android_test.iml" filepath="$PROJECT_DIR$/.idea/ptc_android_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ptc_android_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ptc_android_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ptc_android_test.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ptc_android_test.app.iml" />
     </modules>
   </component>

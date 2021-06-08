@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">Jumia PTC</string>
+    <string name="app_name">JumiaPTC</string>
+    <string name="retry">Retry</string>
+    <string name="check_connection_try_again">Check internet and try again.</string>
+    <string name="phones">Phones</string>
+    <string name="product_details">Product Details</string>
+    <string name="filters">Filters</string>
+    <string name="popularity">Popularity</string>
+    <string name="ratings">%s ratings</string>
+    <string name="what_are_you_looking_for">What are\nyou looking for?</string>
+    <string name="description">Description</string>
+    <string name="search_hint">Search</string>
+    <string name="couldnt_find_your_result">Couldn\'t find a result matches your search</string>
 </resources>
