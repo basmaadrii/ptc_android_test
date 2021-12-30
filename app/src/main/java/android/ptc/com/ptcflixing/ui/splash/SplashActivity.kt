@@ -1,8 +1,8 @@
 package android.ptc.com.ptcflixing.ui.splash
-
 import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
+import android.ptc.com.ptcflixing.R
 import android.ptc.com.ptcflixing.databinding.ActivitySplashBinding
 import android.ptc.com.ptcflixing.ui.search.SearchActivity
 import androidx.appcompat.app.AppCompatActivity
@@ -15,11 +15,17 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        lifecycleScope.launchWhenResumed {
-            delay(500)
-            val intent = Intent(this@SplashActivity, SearchActivity::class.java)
-            val options = ActivityOptions.makeSceneTransitionAnimation(this@SplashActivity, binding.activitySplashLogo, "logo")
-            startActivity(intent, options.toBundle())
-        }
+        lifecycleScope.launchWhenResumed { navigateToSearchScreen() }
+    }
+
+    private suspend fun navigateToSearchScreen() {
+        delay(500)
+        val intent = Intent(this, SearchActivity::class.java)
+        val options = ActivityOptions.makeSceneTransitionAnimation(
+            this, binding.activitySplashLogo,
+            getString(R.string.logo_transition_name)
+        )
+        startActivity(intent, options.toBundle())
+        finish()
     }
 }
