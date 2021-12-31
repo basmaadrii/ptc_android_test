@@ -6,7 +6,7 @@
 
     <ImageView
         android:id="@+id/item_result_image"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
@@ -97,11 +97,14 @@
         app:layout_constraintTop_toTopOf="@id/item_result_special_price_tv" />
 
     <RatingBar
+        android:id="@+id/item_result_rating_bar"
         style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:progressTint="@color/yellow"
         android:rating="3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@id/item_result_price_tv"

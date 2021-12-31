@@ -3,13 +3,11 @@ package android.ptc.com.ptcflixing.ui.search
 import android.app.SearchManager
 import android.content.Context
 import android.os.Bundle
-import android.ptc.com.ptcflixing.R
 import android.ptc.com.ptcflixing.databinding.ActivitySearchBinding
-import android.view.View
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SearchActivity : AppCompatActivity() {
     private val binding by lazy { ActivitySearchBinding.inflate(layoutInflater) }
 

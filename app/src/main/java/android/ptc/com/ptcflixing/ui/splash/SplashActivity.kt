@@ -1,4 +1,5 @@
 package android.ptc.com.ptcflixing.ui.splash
+
 import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +8,10 @@ import android.ptc.com.ptcflixing.databinding.ActivitySplashBinding
 import android.ptc.com.ptcflixing.ui.search.SearchActivity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 
+@AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
     private val binding by lazy { ActivitySplashBinding.inflate(layoutInflater) }
 
