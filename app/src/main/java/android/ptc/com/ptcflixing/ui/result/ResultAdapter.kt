@@ -7,13 +7,14 @@ import android.ptc.com.ptcflixing.databinding.ItemResultBinding
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 class ResultAdapter(
-    val onItemClicked: ((Product?) -> Unit)
+    val onItemClicked: ((Product?, selectedImage: ImageView) -> Unit)
 ) : PagingDataAdapter<Product, ResultAdapter.ResultViewHolder>(ProductComparator) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -29,7 +30,7 @@ class ResultAdapter(
         fun bind(position: Int) {
             val product = getItem(position)
             Glide.with(itemView.context).load(product?.image ?: "").into(binding.itemResultImage)
-            itemView.setOnClickListener { onItemClicked(product) }
+            itemView.setOnClickListener { onItemClicked(product, binding.itemResultImage) }
             updateView(product)
             binding.itemResultPriceTv.apply { paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG }
         }
@@ -41,7 +42,7 @@ class ResultAdapter(
             itemResultSpecialPriceTv.text = product?.specialPrice?.toString() ?: ""
             val discount = product?.let { "-${product.maxSavingPercentage}%" } ?: ""
             itemResultDiscountTv.text = discount
-            itemResultRatingBar.rating = product?.ratingAverage?.toFloat() ?: 0F
+            itemResultRatingBar.rating = product?.ratingAverage ?: 0F
         }
     }
 

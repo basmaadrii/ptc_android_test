@@ -5,4 +5,8 @@
     <string name="search_hint">Search Products</string>
     <string name="filter">Filters</string>
     <string name="popularity">Popularity</string>
+    <string name="specifications">Specifications</string>
+    <string name="description">Description</string>
+    <string name="seller_information">Seller Information</string>
+    <string name="buy_now">Buy Now</string>
 </resources>

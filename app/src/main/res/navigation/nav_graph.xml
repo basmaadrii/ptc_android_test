@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/resultFragment">
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="android.ptc.com.ptcflixing.ui.result.ResultFragment"
+        android:label="ResultFragment">
+        <action
+            android:id="@+id/action_resultFragment_to_productFragment"
+            app:destination="@id/productFragment">
+            <argument
+                android:name="product_sku"
+                android:defaultValue=""
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="android.ptc.com.ptcflixing.ui.product.ProductFragment"
+        android:label="ProductFragment" />
+</navigation>

@@ -22,11 +22,11 @@
         <activity android:name=".ui.search.SearchActivity">
             <meta-data
                 android:name="android.app.default_searchable"
-                android:value=".ui.result.ResultActivity" />
+                android:value=".ui.main.MainActivity" />
         </activity>
 
         <activity
-            android:name=".ui.result.ResultActivity"
+            android:name=".ui.main.MainActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />

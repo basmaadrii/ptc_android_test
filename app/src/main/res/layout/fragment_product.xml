@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/fragment_product_nested_scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/fragment_product_share_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fragment_product_main_image"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_product_images_recycler_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_product_main_image" />
+
+            <View
+                android:id="@+id/fragment_product_images_border"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/light_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_product_images_recycler_view" />
+
+            <TextView
+                android:id="@+id/fragment_product_special_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:textIsSelectable="false"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_product_images_border"
+                tools:text="37,990" />
+
+
+            <TextView
+                android:id="@+id/fragment_product_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/grey"
+                android:textIsSelectable="false"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/fragment_product_special_price_tv"
+                app:layout_constraintStart_toEndOf="@id/fragment_product_special_price_tv"
+                app:layout_constraintTop_toTopOf="@id/fragment_product_special_price_tv"
+                tools:text="53,996" />
+
+            <TextView
+                android:id="@+id/fragment_product_discount_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/ic_rectangle_orange"
+                android:padding="2dp"
+                android:textColor="@color/colorAccent"
+                android:textIsSelectable="false"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/fragment_product_price_tv"
+                app:layout_constraintStart_toEndOf="@id/fragment_product_price_tv"
+                app:layout_constraintTop_toTopOf="@id/fragment_product_price_tv"
+                tools:text="-30%" />
+
+
+            <View
+                android:id="@+id/fragment_product_price_border"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/light_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_product_special_price_tv" />
+
+            <RatingBar
+                android:id="@+id/fragment_product_rating_bar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:progressTint="@color/yellow"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_product_price_border"
+                tools:rating="3" />
+
+            <TextView
+                android:id="@+id/fragment_product_rating_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/blue"
+                android:textIsSelectable="false"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/fragment_product_rating_bar"
+                app:layout_constraintStart_toEndOf="@id/fragment_product_rating_bar"
+                app:layout_constraintTop_toTopOf="@id/fragment_product_rating_bar"
+                tools:text="267 ratings" />
+
+            <View
+                android:id="@+id/fragment_product_rating_border"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/light_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_product_rating_bar" />
+
+            <TextView
+                android:id="@+id/fragment_product_specifications_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/grey_background"
+                android:padding="20dp"
+                android:text="@string/specifications"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/fragment_product_rating_border" />
+
+            <TextView
+                android:id="@+id/fragment_product_specifications_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textIsSelectable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_product_specifications_title"
+                tools:text="- 5.2 Inch 2.5D IPS Corning Gorilla Glass 3 Screen\n - MTK6737T 1.5GHz Quad Core\n - 3GB RAM + 32GB ROM\n - 13 MP Back Camera + 16 MP Front Camera with Selfie Flash\n -  Android 7.0 System\n - 4000mAh Battery" />
+
+            <View
+                android:id="@+id/fragment_product_specification_border"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/light_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_product_specifications_content" />
+
+            <TextView
+                android:id="@+id/fragment_product_description_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/grey_background"
+                android:padding="20dp"
+                android:text="@string/description"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/fragment_product_specification_border" />
+
+            <TextView
+                android:id="@+id/fragment_product_description_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textIsSelectable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_product_description_title"
+                tools:text="- 5.2 Inch 2.5D IPS Corning Gorilla Glass 3 Screen, 1280*720 Pixel- MTK6737T 1.5GHz Quad Core- Support Touch ID- 3GB RAM + 32GB ROM, Support 256GB TF Card Expansion- 13 MP Back Camera + 16 MP Front Camera with Selfie Flash- Amigo OS 4.0 ( Based On Android 7.0 System)- 4000mAh Battery.- Support Fingerprint Shutter, IR Remote Control, Image+, Ami Clone, Split Screen, Theme Park,Three Individual Slots etc.- Dual SIM: NANO SIM + NANO SIM + TF Card, three Card Slot.- Band: GSM 850/900/1800/1900MHz, WCDMA 850/900/1900/2100MHz, FDD-LTE B1/B3/B7/B8/B20, Support 2G  3G  4G LTE Network.-Language:English, German, Spanish, Italian, French, Portuguese, Thai, Arabic, Turkish, Vietnamese, Malay, Chinese (simplified), Chinese (traditional), And Etc..." />
+
+            <View
+                android:id="@+id/fragment_product_description_border"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/light_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_product_description_content" />
+
+
+            <TextView
+                android:id="@+id/fragment_product_seller_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/grey_background"
+                android:padding="20dp"
+                android:text="@string/seller_information"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/fragment_product_description_border" />
+
+            <TextView
+                android:id="@+id/fragment_product_seller_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textIsSelectable="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_product_seller_title"
+                tools:text="iTechStor: Shipped from overseas. Delivered by Thursday 14 Jun." />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/fragment_product_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/fragment_product_share_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_product_error_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_error"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textColor="@color/colorAccent"
+        android:textIsSelectable="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/fragment_product_share_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/fragment_product_share_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="20dp"
+        android:src="@drawable/ic_share"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_product_buy_now_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="@string/buy_now"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_product_share_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fragment_product_share_btn"
+        app:layout_constraintTop_toTopOf="@id/fragment_product_share_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

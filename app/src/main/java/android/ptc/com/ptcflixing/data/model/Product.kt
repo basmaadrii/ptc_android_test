@@ -15,5 +15,5 @@ data class Product(
     val specialPrice: Int,
     val image: String,
     @SerialName("rating_average")
-    val ratingAverage: Int = 0
+    val ratingAverage: Float = 0F
 )

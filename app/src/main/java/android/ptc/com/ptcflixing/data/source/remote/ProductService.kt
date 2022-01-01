@@ -1,5 +1,7 @@
 package android.ptc.com.ptcflixing.data.source.remote
 
+import android.ptc.com.ptcflixing.data.model.BaseResponse
+import android.ptc.com.ptcflixing.data.model.ProductDetails
 import android.ptc.com.ptcflixing.data.model.SearchResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -10,8 +12,10 @@ interface ProductService {
     suspend fun search(
         @Path("query") query: String,
         @Path("page") page: Int
-    ) : Response<SearchResponse>
+    ): Response<BaseResponse<SearchResponse>>
 
-    @GET("product/{id}/")
-    suspend fun getProduct(@Path("id") productId: String)
+    @GET("product/{sku}/")
+    suspend fun getProduct(
+        @Path("sku") sku: String
+    ): Response<BaseResponse<ProductDetails>>
 }

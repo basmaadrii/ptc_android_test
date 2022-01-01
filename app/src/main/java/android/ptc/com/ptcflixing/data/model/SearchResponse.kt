@@ -5,13 +5,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class SearchResponse(
-    val success: Boolean,
-    @SerialName("metadata")
-    val metadata: SearchResponseMetadata
-)
-
-@Serializable
-data class SearchResponseMetadata(
     val sort: String,
     @SerialName("total_products")
     val totalProducts: Int,

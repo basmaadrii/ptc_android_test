@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/fragment_result_filter_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_filter"
+        android:padding="10dp"
+        android:text="@string/filter"
+        android:textColor="@color/black"
+        android:textIsSelectable="false"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/fragment_result_filter_vertical_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/fragment_result_filter_vertical_view"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="@color/light_grey"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_result_filter_tv"
+        app:layout_constraintEnd_toStartOf="@id/fragment_result_sort_tv"
+        app:layout_constraintStart_toEndOf="@id/fragment_result_filter_tv"
+        app:layout_constraintTop_toTopOf="@id/fragment_result_filter_tv" />
+
+
+    <TextView
+        android:id="@+id/fragment_result_sort_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_sort"
+        android:padding="10dp"
+        android:text="@string/popularity"
+        android:textColor="@color/black"
+        android:textIsSelectable="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_result_filter_vertical_view"
+        app:layout_constraintEnd_toStartOf="@id/fragment_result_sort_vertical_view"
+        app:layout_constraintStart_toEndOf="@id/fragment_result_filter_vertical_view"
+        app:layout_constraintTop_toTopOf="@id/fragment_result_filter_vertical_view" />
+
+    <View
+        android:id="@+id/fragment_result_sort_vertical_view"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="@color/light_grey"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_result_sort_tv"
+        app:layout_constraintEnd_toStartOf="@id/fragment_result_grid_iv"
+        app:layout_constraintStart_toEndOf="@id/fragment_result_sort_tv"
+        app:layout_constraintTop_toTopOf="@id/fragment_result_sort_tv" />
+
+    <ImageView
+        android:id="@+id/fragment_result_grid_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_grid"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_result_sort_vertical_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fragment_result_sort_vertical_view"
+        app:layout_constraintTop_toTopOf="@id/fragment_result_sort_vertical_view" />
+
+    <View
+        android:id="@+id/fragment_result_horizontal_view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_result_filter_tv" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_result_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_result_horizontal_view" />
+
+    <ProgressBar
+        android:id="@+id/activty_result_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_result_horizontal_view" />
+
+    <TextView
+        android:id="@+id/fragment_result_error_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_error"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textColor="@color/colorAccent"
+        android:textIsSelectable="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_result_horizontal_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

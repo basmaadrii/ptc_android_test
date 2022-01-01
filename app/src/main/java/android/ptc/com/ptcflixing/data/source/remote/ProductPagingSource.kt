@@ -14,9 +14,8 @@ class ProductPagingSource @Inject constructor(
             val nextPageNumber = params.key ?: 1
             val response = productService.search(query, nextPageNumber)
             if (response.isSuccessful) {
-                response.body()?.let {
-                    return LoadResult.Page(data = it.metadata.results, prevKey = null, nextKey = nextPageNumber + 1)
-                }
+                response.body()?.metadata?.let { return LoadResult.Page(data = it.results, prevKey = null, nextKey = nextPageNumber + 1) }
+                response.body()?.messages?.let { return LoadResult.Error(Throwable(it.error.message)) }
             }
             return LoadResult.Error(Throwable(response.message()))
         } catch (e: Exception) {

@@ -1,6 +1,7 @@
 package android.ptc.com.ptcflixing.data.di
 
 import android.ptc.com.ptcflixing.data.repository.ProductRepositoryImpl
+import android.ptc.com.ptcflixing.data.source.remote.ProductRemoteDataSource
 import android.ptc.com.ptcflixing.data.source.remote.ProductService
 import android.ptc.com.ptcflixing.domain.repository.ProductRepository
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
@@ -53,8 +54,8 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideProductsRepository(productService: ProductService): ProductRepository =
-        ProductRepositoryImpl(productService)
+    fun provideProductsRepository(productService: ProductService, productRemoteDataSource: ProductRemoteDataSource): ProductRepository =
+        ProductRepositoryImpl(productService, productRemoteDataSource)
 
     @Singleton
     @Provides
