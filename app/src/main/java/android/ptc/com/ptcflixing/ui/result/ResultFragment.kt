@@ -66,6 +66,21 @@ class ResultFragment : Fragment() {
             val pagingAdapter = binding.fragmentResultRecyclerView.adapter as ResultAdapter
             pagingAdapter.loadStateFlow.collectLatest { loadStates -> updateView(loadStates.refresh) }
         }
+        viewModel.configurationLoadingEvent.observe(viewLifecycleOwner, { updateView(LoadState.Loading) })
+        viewModel.configurationErrorEvent.observe(viewLifecycleOwner, { updateView(LoadState.Error(Throwable(it))) })
+        viewModel.configurationSuccessEvent.observe(viewLifecycleOwner, {
+            updateView(LoadState.Loading)
+            setProductsObserver()
+        })
+    }
+
+    private fun setProductsObserver() {
+        viewModel.productLiveData.observe(viewLifecycleOwner, { pagingData ->
+            viewLifecycleOwner.lifecycleScope.launch {
+                val pagingAdapter = binding.fragmentResultRecyclerView.adapter as ResultAdapter
+                pagingAdapter.submitData(pagingData)
+            }
+        })
     }
 
     private fun updateView(loadState: LoadState) {
@@ -80,11 +95,5 @@ class ResultFragment : Fragment() {
         Snackbar.make(requireContext(), binding.root, "Replacing received query \"$query\" with \"phone\"", Snackbar.LENGTH_LONG).show()
         (requireActivity() as MainActivity).setToolbarTitle(DEFAULT_QUERY)
         viewModel.search(DEFAULT_QUERY)
-        viewModel.productLiveData.observe(viewLifecycleOwner, { pagingData ->
-            viewLifecycleOwner.lifecycleScope.launch {
-                val pagingAdapter = binding.fragmentResultRecyclerView.adapter as ResultAdapter
-                pagingAdapter.submitData(pagingData)
-            }
-        })
     }
 }

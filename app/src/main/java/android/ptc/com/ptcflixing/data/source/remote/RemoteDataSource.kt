@@ -15,6 +15,7 @@ abstract class RemoteDataSource {
             }
             return Result.Error("Error code: ${response.code()}.\n${response.message()}")
         } catch (e: Exception) {
+            e.printStackTrace()
             return Result.Error(e.toString())
         }
     }

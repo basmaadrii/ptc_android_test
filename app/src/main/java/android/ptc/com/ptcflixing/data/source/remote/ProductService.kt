@@ -1,6 +1,7 @@
 package android.ptc.com.ptcflixing.data.source.remote
 
 import android.ptc.com.ptcflixing.data.model.BaseResponse
+import android.ptc.com.ptcflixing.data.model.Configuration
 import android.ptc.com.ptcflixing.data.model.ProductDetails
 import android.ptc.com.ptcflixing.data.model.SearchResponse
 import retrofit2.Response
@@ -18,4 +19,7 @@ interface ProductService {
     suspend fun getProduct(
         @Path("sku") sku: String
     ): Response<BaseResponse<ProductDetails>>
+
+    @GET("configurations/")
+    suspend fun getConfigurations(): Response<BaseResponse<Configuration>>
 }

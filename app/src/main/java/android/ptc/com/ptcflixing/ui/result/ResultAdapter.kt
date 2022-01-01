@@ -2,6 +2,7 @@ package android.ptc.com.ptcflixing.ui.result
 
 import android.graphics.Paint
 import android.ptc.com.ptcflixing.R
+import android.ptc.com.ptcflixing.common.toCurrencyFormat
 import android.ptc.com.ptcflixing.data.model.Product
 import android.ptc.com.ptcflixing.databinding.ItemResultBinding
 import android.view.LayoutInflater
@@ -38,8 +39,8 @@ class ResultAdapter(
         private fun updateView(product: Product?) = binding.apply {
             itemResultBrandTv.text = product?.brand ?: ""
             itemResultNameTv.text = product?.name ?: ""
-            itemResultPriceTv.text = product?.price?.toString() ?: ""
-            itemResultSpecialPriceTv.text = product?.specialPrice?.toString() ?: ""
+            itemResultPriceTv.text = product?.price?.toCurrencyFormat()
+            itemResultSpecialPriceTv.text = product?.specialPrice?.toCurrencyFormat()
             val discount = product?.let { "-${product.maxSavingPercentage}%" } ?: ""
             itemResultDiscountTv.text = discount
             itemResultRatingBar.rating = product?.ratingAverage ?: 0F

@@ -3,6 +3,7 @@ package android.ptc.com.ptcflixing.ui.product
 import android.graphics.Paint
 import android.os.Bundle
 import android.ptc.com.ptcflixing.R
+import android.ptc.com.ptcflixing.common.toCurrencyFormat
 import android.ptc.com.ptcflixing.data.model.Image
 import android.ptc.com.ptcflixing.data.model.ProductDetails
 import android.ptc.com.ptcflixing.databinding.FragmentProductBinding
@@ -82,8 +83,8 @@ class ProductFragment : Fragment() {
         Glide.with(requireContext()).load(product.images[0]).into(binding.fragmentProductMainImage)
         startPostponedEnterTransition()
         binding.fragmentProductPriceTv.apply { paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG }
-        binding.fragmentProductPriceTv.text = product.price.toString()
-        binding.fragmentProductSpecialPriceTv.text = product.specialPrice.toString()
+        binding.fragmentProductPriceTv.text = product.price.toCurrencyFormat()
+        binding.fragmentProductSpecialPriceTv.text = product.specialPrice.toCurrencyFormat()
         val discount = "-${product.maxSavingPercentage}%"
         binding.fragmentProductDiscountTv.text = discount
         binding.fragmentProductRatingBar.rating = product.rating.average

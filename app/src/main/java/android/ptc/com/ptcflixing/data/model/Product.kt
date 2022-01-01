@@ -10,9 +10,9 @@ data class Product(
     val brand: String,
     @SerialName("max_saving_percentage")
     val maxSavingPercentage: Int,
-    val price: Int,
+    val price: Float,
     @SerialName("special_price")
-    val specialPrice: Int,
+    val specialPrice: Float,
     val image: String,
     @SerialName("rating_average")
     val ratingAverage: Float = 0F
