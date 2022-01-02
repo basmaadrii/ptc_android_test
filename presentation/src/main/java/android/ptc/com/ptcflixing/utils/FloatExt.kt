@@ -1,16 +1,25 @@
 package android.ptc.com.ptcflixing.utils
 
+import android.ptc.com.ptcflixing.data.model.Currency
+import android.ptc.com.ptcflixing.data.utils.SharedPreferenceManager
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.text.NumberFormat
 
-fun Float?.toCurrencyFormat(): String {
+fun Float?.toCurrencyFormat(currency: Currency?): String {
     if (this == null) return ""
-    val currency = SharedPreferenceManager.currency ?: return toString()
-    val format = NumberFormat.getCurrencyInstance()
-    val decimalFormatSymbols: DecimalFormatSymbols = (format as DecimalFormat).decimalFormatSymbols
-    decimalFormatSymbols.currencySymbol = currency.currencySymbol
-    format.decimalFormatSymbols = decimalFormatSymbols
-    format.maximumFractionDigits = currency.decimals
-    return format.format(this)
+    return currency?.let {
+        val format = NumberFormat.getCurrencyInstance()
+        (format as DecimalFormat).setSymbols(currency)
+        format.maximumFractionDigits = currency.decimals
+        format.format(this)
+    } ?: toString()
+}
+
+private fun DecimalFormat.setSymbols(currency: Currency) {
+    decimalFormatSymbols = decimalFormatSymbols.apply {
+        currencySymbol = currency.currencySymbol
+        decimalSeparator = currency.decimalSeparator[0]
+        groupingSeparator = currency.thousandSeparator[0]
+    }
 }

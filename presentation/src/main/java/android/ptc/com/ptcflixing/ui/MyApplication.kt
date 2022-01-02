@@ -1,7 +1,7 @@
 package android.ptc.com.ptcflixing.ui
 
 import android.app.Application
-import android.ptc.com.ptcflixing.utils.SharedPreferenceManager
+import android.ptc.com.ptcflixing.data.utils.SharedPreferenceManager
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp

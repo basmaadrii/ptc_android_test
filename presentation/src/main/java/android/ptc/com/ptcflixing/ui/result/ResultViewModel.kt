@@ -6,7 +6,7 @@ import android.app.Application
 import android.ptc.com.ptcflixing.common.Result
 import android.ptc.com.ptcflixing.data.model.Configuration
 import android.ptc.com.ptcflixing.data.model.Product
-import android.ptc.com.ptcflixing.utils.SharedPreferenceManager
+import android.ptc.com.ptcflixing.data.utils.SharedPreferenceManager
 import android.ptc.com.ptcflixing.utils.getErrorEvent
 import android.ptc.com.ptcflixing.utils.getLoadingEvent
 import android.ptc.com.ptcflixing.utils.getSuccessEvent
@@ -33,11 +33,15 @@ class ResultViewModel @Inject constructor(
     val configurationLoadingEvent = configurationLiveData.getLoadingEvent()
 
     fun search(query: String) = viewModelScope.launch {
+        if (!isConfigurationSet()) return@launch
+        productLiveData = searchProductUseCase.search(query).cachedIn(viewModelScope)
+    }
+
+    private suspend fun isConfigurationSet(): Boolean {
+        if (SharedPreferenceManager.currency != null) return true
         configurationLiveData.value = Result.Loading
         val configuration = configurationsUseCase.getConfigurations()
         configurationLiveData.value = configuration
-        if (configuration is Result.Error) return@launch
-        SharedPreferenceManager.currency = (configuration as Result.Success).data.currency
-        productLiveData = searchProductUseCase.search(query).cachedIn(viewModelScope)
+        return configuration.isSuccessful()
     }
 }

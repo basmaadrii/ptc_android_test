@@ -95,5 +95,6 @@ class ResultFragment : Fragment() {
         Snackbar.make(requireContext(), binding.root, "Replacing received query \"$query\" with \"phone\"", Snackbar.LENGTH_LONG).show()
         (requireActivity() as MainActivity).setToolbarTitle(DEFAULT_QUERY)
         viewModel.search(DEFAULT_QUERY)
+        setProductsObserver()
     }
 }

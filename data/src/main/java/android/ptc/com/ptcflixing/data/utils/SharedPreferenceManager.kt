@@ -1,8 +1,7 @@
-package android.ptc.com.ptcflixing.utils
+package android.ptc.com.ptcflixing.data.utils
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.ptc.com.ptcflixing.R
 import android.ptc.com.ptcflixing.data.model.Currency
 import androidx.core.content.edit
 import kotlinx.serialization.encodeToString
@@ -15,7 +14,7 @@ object SharedPreferenceManager {
     private lateinit var sharedPreferences: SharedPreferences
 
     fun setup(context: Context) {
-        sharedPreferences = context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
+        sharedPreferences = context.getSharedPreferences("Jumia PTC preferences", Context.MODE_PRIVATE)
     }
 
     fun clear() = sharedPreferences.edit { clear() }
