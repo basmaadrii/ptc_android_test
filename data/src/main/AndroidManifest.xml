@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="android.ptc.com.ptcflixing.data">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="android.ptc.com.ptcflixing.data">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

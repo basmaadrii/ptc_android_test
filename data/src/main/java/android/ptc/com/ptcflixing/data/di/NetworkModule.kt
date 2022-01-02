@@ -1,6 +1,6 @@
 package android.ptc.com.ptcflixing.data.di
 
-import android.ptc.com.ptcflixing.data.source.remote.ProductService
+import android.ptc.com.ptcflixing.data.remote.source.remote.ProductService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides

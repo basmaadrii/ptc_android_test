@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "metadata": {
+    "sort": "POPULARITY",
+    "total_products": 20,
+    "title": "Phones & Tablets",
+    "results": [
+      {
+        "sku": "1",
+        "name": "Samsung Galaxy S9",
+        "brand": "Samsung",
+        "max_saving_percentage": 30,
+        "price": 53996,
+        "special_price": 37990,
+        "image": "https://cdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s9-.jpg",
+        "rating_average": 5
+      },
+      {
+        "sku": "2",
+        "name": "Huawei P20 Pro",
+        "brand": "Huawei",
+        "max_saving_percentage": 45,
+        "price": 43899,
+        "special_price": 23990,
+        "image": "https://cdn2.gsmarena.com/vv/bigpic/huawei-p20-pro-.jpg",
+        "rating_average": 4
+      }
+    ]
+  }
+}

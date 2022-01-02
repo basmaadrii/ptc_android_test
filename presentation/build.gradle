@@ -14,7 +14,7 @@ android {
         targetSdkVersion 32
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -36,6 +36,9 @@ android {
         unitTests {
             includeAndroidResources = true
         }
+    }
+    packagingOptions {
+        exclude("META-INF/*")
     }
 }
 
@@ -92,6 +95,18 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
+    // Fragment Testing
+    debugImplementation "androidx.fragment:fragment-testing:1.4.0"
+
+    // For Robolectric tests.
+    testImplementation 'com.google.dagger:hilt-android-testing:2.38.1'
+    kaptTest 'com.google.dagger:hilt-android-compiler:2.38.1'
+
+    // For instrumented tests.
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.38.1'
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.38.1'
+
 }
 
 repositories {

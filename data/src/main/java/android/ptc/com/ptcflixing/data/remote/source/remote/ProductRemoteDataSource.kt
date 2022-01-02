@@ -1,4 +1,4 @@
-package android.ptc.com.ptcflixing.data.source.remote
+package android.ptc.com.ptcflixing.data.remote.source.remote
 
 import javax.inject.Inject
 

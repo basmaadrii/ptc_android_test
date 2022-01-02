@@ -1,9 +1,9 @@
 package andorid.ptc.com.ptcflixing.domain.repository
 
 import android.ptc.com.ptcflixing.data.model.Product
-import android.ptc.com.ptcflixing.data.source.remote.ProductPagingSource
-import android.ptc.com.ptcflixing.data.source.remote.ProductRemoteDataSource
-import android.ptc.com.ptcflixing.data.source.remote.ProductService
+import android.ptc.com.ptcflixing.data.remote.source.remote.ProductPagingSource
+import android.ptc.com.ptcflixing.data.remote.source.remote.ProductRemoteDataSource
+import android.ptc.com.ptcflixing.data.remote.source.remote.ProductService
 import androidx.lifecycle.LiveData
 import androidx.paging.Pager
 import androidx.paging.PagingConfig

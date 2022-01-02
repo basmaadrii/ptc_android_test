@@ -1,6 +1,6 @@
 package andorid.ptc.com.ptcflixing.domain.repository
 
-import android.ptc.com.ptcflixing.data.source.remote.ConfigurationRemoteDataSource
+import android.ptc.com.ptcflixing.data.remote.source.remote.ConfigurationRemoteDataSource
 import javax.inject.Inject
 
 class ConfigurationRepositoryImpl @Inject constructor(

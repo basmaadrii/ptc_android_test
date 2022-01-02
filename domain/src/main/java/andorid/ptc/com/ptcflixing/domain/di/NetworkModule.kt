@@ -2,9 +2,9 @@ package andorid.ptc.com.ptcflixing.domain.di
 
 import andorid.ptc.com.ptcflixing.domain.repository.ConfigurationRepositoryImpl
 import andorid.ptc.com.ptcflixing.domain.repository.ProductRepositoryImpl
-import android.ptc.com.ptcflixing.data.source.remote.ConfigurationRemoteDataSource
-import android.ptc.com.ptcflixing.data.source.remote.ProductRemoteDataSource
-import android.ptc.com.ptcflixing.data.source.remote.ProductService
+import android.ptc.com.ptcflixing.data.remote.source.remote.ConfigurationRemoteDataSource
+import android.ptc.com.ptcflixing.data.remote.source.remote.ProductRemoteDataSource
+import android.ptc.com.ptcflixing.data.remote.source.remote.ProductService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
